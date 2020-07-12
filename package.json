@@ -16,7 +16,9 @@
     "url": "https://github.com/luke-h1/covid-19-tracker/issues"
   },
   "homepage": "https://github.com/luke-h1/covid-19-tracker#readme",
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.17.1"
+  },
   "devDependencies": {
     "eslint": "^7.4.0"
   }
