@@ -4,4 +4,4 @@
 
 
 
-<img src="https://media.giphy.com/media/2UCt7zbmsLoCXybx6t/giphy.gif" width="220" height="220" />
+<img src="https://media.giphy.com/media/2UCt7zbmsLoCXybx6t/giphy.gif" width="400" height="400" />
