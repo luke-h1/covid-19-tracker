@@ -2,8 +2,8 @@
 {{WIP}} - Simple covid-19 tracker made with Vanilla JS, HTML &amp; CSS 
 
 # TO-DO : 
-* use new API with less rate -limiting  
-* use bootstrap to make page look nicer 
+* fix concatentation issue by clearing form after new country has been submitted 
+* improve styles 
 
 
 
