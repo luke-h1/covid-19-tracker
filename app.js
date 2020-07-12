@@ -16,9 +16,9 @@ myForm.addEventListener('submit', function(e) {
 		let confirmed = document.getElementById('confirmed') ; 
 		let recovered = document.getElementById('recovered') ; 
 		let deaths = document.getElementById('deaths') ; 
-		confirmed.append("Confirmed cases:"+res[index].Confirmed) 
-		recovered.append("Confirmed Recovered"+res[index].Recovered)		 
-		deaths.append("Deaths:"+res[index].Deaths) 
+		confirmed.append(res[index].Confirmed) 
+		recovered.append(res[index].Recovered)
+		deaths.append(+res[index].Deaths) 
 		
 
 	})); 	
