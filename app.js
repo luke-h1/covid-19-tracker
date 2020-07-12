@@ -1,7 +1,10 @@
 const myForm = document.getElementById('myForm') ; 
 myForm.addEventListener('submit', function(e) {  
+	e.preventDefault() ;  // prevent form being submitted 
+	
+	
 
-	e.preventDefault() ; 
+
 	const country = document.getElementById('country').value   
 	// fetch get request for data 
 	const url = "https://api.covid19api.com/total/dayone/country/"+country  ; 
@@ -13,9 +16,17 @@ myForm.addEventListener('submit', function(e) {
 		let confirmed = document.getElementById('confirmed') ; 
 		let recovered = document.getElementById('recovered') ; 
 		let deaths = document.getElementById('deaths') ; 
-		confirmed.append(res[index].Confirmed) 
-		recovered.append(res[index].Recovered)		 
-		deaths.append(res[index].Deaths)
+		confirmed.append("Confirmed cases:"+res[index].Confirmed) 
+		recovered.append("Confirmed Recovered"+res[index].Recovered)		 
+		deaths.append("Deaths:"+res[index].Deaths) 
+		
 
 	})); 	
-}); 
+});
+
+
+
+
+// confirmed.innerHTML = '' 
+// recovered.innerHTML = ''  
+// deaths.innerHTML = '' 
