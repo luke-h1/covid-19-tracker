@@ -6,10 +6,16 @@ myForm.addEventListener('submit', function(e) {
 	// fetch get request for data 
 	const url = "https://api.covid19api.com/total/dayone/country/"+country  ; 
 
-	fetch(url).then((res) => res.json()).then((res => { 
+	fetch(url).then((res) => res.json()).then((res => {   
 		console.log(res) ; 
-	}))
+		let length = res.length ; 
+		let index = length -1 ;  
+		let confirmed = document.getElementById('confirmed') ; 
+		let recovered = document.getElementById('recovered') ; 
+		let deaths = document.getElementById('deaths') ; 
+		confirmed.append(res[index].Confirmed) 
+		recovered.append(res[index].Recovered)		 
+		deaths.append(res[index].Deaths)
 
-	
-})
-
+	})); 	
+}); 
