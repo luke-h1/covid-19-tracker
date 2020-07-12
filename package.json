@@ -1,0 +1,23 @@
+{
+  "name": "covid-19-tracker",
+  "version": "1.0.0",
+  "description": "{{WIP}} - Simple covid-19 tracker made with Vanilla JS, HTML &amp; CSS",
+  "main": "app.js",
+  "scripts": {
+    "test": "/Users/lukehowsam/srv/dev/covid-19-tracker/node_modules/.bin/eslint *.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luke-h1/covid-19-tracker.git"
+  },
+  "author": "luke-h1",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/luke-h1/covid-19-tracker/issues"
+  },
+  "homepage": "https://github.com/luke-h1/covid-19-tracker#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^7.4.0"
+  }
+}
