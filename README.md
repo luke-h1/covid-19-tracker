@@ -3,10 +3,12 @@
 
 # TO-DO : 
 * fix concatentation issue by clearing form after new country has been submitted  
-    * possible solutions:  
-          * add event listener to button (on.click() ) 
-          * create function and add event listener to button. On click clear form 
-    * improve styles 
+         * possible solutions:  
+         * add event listener to button (on.click() ) 
+         * create function and add event listener to button. On click clear form 
+         
+         
+* improve styles ✅
 
 
 
