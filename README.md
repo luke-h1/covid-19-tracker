@@ -2,5 +2,6 @@
 {{WIP}} - Simple covid-19 tracker made with Vanilla JS, HTML &amp; CSS 
 
 
-![This is fine ] (https://giphy.com/embed/2UCt7zbmsLoCXybx6t)
 
+
+<img src="https://media.giphy.com/media/2UCt7zbmsLoCXybx6t/giphy.gif" width="220" height="220" />
