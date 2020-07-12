@@ -13,12 +13,13 @@ myForm.addEventListener('submit', function(e) {
 		console.log(res) ; 
 		let length = res.length ; 
 		let index = length -1 ;  
-		let confirmed = document.getElementById('confirmed') ; 
-		let recovered = document.getElementById('recovered') ; 
-		let deaths = document.getElementById('deaths') ; 
-		confirmed.append(res[index].Confirmed) 
+		let confirmed = document.getElementById('confirmed'); 
+		let recovered = document.getElementById('recovered'); 
+		let deaths = document.getElementById('deaths'); 
+		confirmed.append(res[index].Confirmed)
 		recovered.append(res[index].Recovered)
-		deaths.append(+res[index].Deaths) 
+		deaths.append(+res[index].Deaths)  
+
 		
 
 	})); 	
@@ -30,3 +31,5 @@ myForm.addEventListener('submit', function(e) {
 // confirmed.innerHTML = '' 
 // recovered.innerHTML = ''  
 // deaths.innerHTML = '' 
+
+// String(n).replace(/(.)(?=(\d{3})+$)/g,'$1,')
