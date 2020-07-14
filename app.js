@@ -18,19 +18,19 @@ myForm.addEventListener('submit', function(e) {
 		let deaths = document.getElementById('deaths'); 
 		confirmed.append("Confirmed Cases:"+res[index].Confirmed)
 		recovered.append("Confirmed Recovered:"+res[index].Recovered)
-		deaths.append("Confirmed Deaths:"+res[index].Deaths)  
+		deaths.append("Confirmed Deaths:"+res[index].Deaths)   
 
 
 
 	})); 	
+		confirmed.innerHTML = '' 
+		recovered.innerHTML = ''  
+		deaths.innerHTML = '' 
+
+
 });
 
 
-// function clear__Form() { 
-// 		confirmed.innerHTML = '' 
-// 		recovered.innerHTML = ''  
-// 		deaths.innerHTML = '' 	
-// }
 
 
 
