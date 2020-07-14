@@ -23,6 +23,7 @@ myForm.addEventListener('submit', function(e) {
 
 
 	})); 	
+	// fix concatenation issue 
 		confirmed.innerHTML = '' 
 		recovered.innerHTML = ''  
 		deaths.innerHTML = '' 
