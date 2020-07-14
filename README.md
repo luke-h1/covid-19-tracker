@@ -2,7 +2,7 @@
 {{WIP}} - Simple covid-19 tracker made with Vanilla JS, HTML &amp; CSS 
 
 # TO-DO : 
-* fix concatentation issue by clearing form after new country has been submitted  ❌
+* fix concatentation issue by clearing form after new country has been submitted  ✅
 * improve styles ✅
 
 
