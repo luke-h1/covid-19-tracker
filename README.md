@@ -1,12 +1,11 @@
 # covid-19-tracker
 * Simple covid-19 tracker made with Vanilla JS, HTML * CSS 
 
-# TO-DO : 
-* fix concatentation issue by clearing form after new country has been submitted  ✅
-* improve styles ✅ 
-* move to new, more reliable API 
-* refactor with try catch ✅ 
-* add some time of 404 / error handler maybe 
+# TO-DO :  
+  * manipulate DOM to dynamically insert results from API into HTML page 
+  * fix styles + button to be more user friendly 
+
 
 # documentation 
- * Documentation can be found here: https://documenter.getpostman.com/view/10808728/SzS8rjbc?version=latest
+  * https://documenter.getpostman.com/view/11144369/Szf6Z9B3?version=latest 
+  * postman collections 
