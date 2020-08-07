@@ -1,41 +1,38 @@
+/* eslint-disable no-console */
 const buttton = document.getElementById('button-addon1');
 const input = document.querySelector('.form-control').value;
 const API_URL = `https://corona.lmao.ninja/v2/all?${input}`;
 
-//corona.lmao.ninja/v2/jhucsse/counties/:countyName
-
-https: buttton.addEventListener('click', getResults);
 
 async function getResults() {
-    if (input === '') {
-        alert('ADD A COUNTRY!'); // turn into dynamic div element
-    } else {
-        try {
-            let start = new Date().getTime();
-            await fetch(API_URL)
-                .then((res) => res.json())
-                .then((res) => {
-                    console.log(res); 
-                    const divRow = document.createElement('div'); 
-                    divRow.className = 'row';  
-                    const colCard = document.createElement('div') 
-                    colCard.className = 'col-sm-6';  
-                    const divCard = document.createElement('div'); 
-                    divCard.className = 'card'; 
-                    const divBody = document.createElement('div'); 
-                    divBody.className = 'card-body'; 
-                    const h5 = document.createElement('h5');
-                    h5.className = 'card-title';  
-                    const paraText = document.createElement('p'); 
-                    paraText.className = 'card-text';   
+  if (input === '') {
+    // eslint-disable-next-line no-alert
+    alert('ADD A COUNTRY!'); // turn into dynamic div element
+  } else {
+      const start = new Date().getTime();
+      await fetch(API_URL)
+        .then((res) => res.json())
+        .then((res) => {
+          console.log(res);
+          const divRow = document.createElement('div');
+          divRow.className = 'row';
+          const colCard = document.createElement('div');
+          colCard.className = 'col-sm-6';
+          const divCard = document.createElement('div');
+          divCard.className = 'card';
+          const divBody = document.createElement('div');
+          divBody.className = 'card-body';
+          const h5 = document.createElement('h5');
+          h5.className = 'card-title';
+          const paraText = document.createElement('p');
+          paraText.className = 'card-text';
+          const end = new Date().getTime();
+          const time = end - start;
+          console.log(`execution time${time}miliseconds`); 
+           
+  }} 
 
-                   
-                });
-        } catch {
-            console.log('some error');
-        }
-    }
-}
+buttton.addEventListener('click', getResults);
 
 // API RESPONSE
 // {
