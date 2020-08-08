@@ -1,38 +1,106 @@
 /* eslint-disable no-console */
-const buttton = document.getElementById('button-addon1');
+/* eslint-disable-no-console */
+
+const button = document.getElementById('button-addon1');
 const input = document.querySelector('.form-control').value;
 const API_URL = `https://corona.lmao.ninja/v2/all?${input}`;
-
+const results = document.querySelector('.results');
 
 async function getResults() {
-  if (input === '') {
-    // eslint-disable-next-line no-alert
-    alert('ADD A COUNTRY!'); // turn into dynamic div element
+  if (input === null) {
+    console.log('enter a value'); // change to dynamic div 
   } else {
-      const start = new Date().getTime();
-      await fetch(API_URL)
-        .then((res) => res.json())
-        .then((res) => {
-          console.log(res);
-          const divRow = document.createElement('div');
-          divRow.className = 'row';
-          const colCard = document.createElement('div');
-          colCard.className = 'col-sm-6';
-          const divCard = document.createElement('div');
-          divCard.className = 'card';
-          const divBody = document.createElement('div');
-          divBody.className = 'card-body';
-          const h5 = document.createElement('h5');
-          h5.className = 'card-title';
-          const paraText = document.createElement('p');
-          paraText.className = 'card-text';
-          const end = new Date().getTime();
-          const time = end - start;
-          console.log(`execution time${time}miliseconds`); 
-           
-  }} 
+    const start = new Date().getTime();
+    await fetch(API_URL)
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+        const output = `
+          <div class="col-sm-6"> 
+          <div class="card"> 
+          <div class="card-body"> 
+          <h5 class="card-title">Today's cases</h5> 
+          <p class="card-text">${res.todayCases}</p>  
+          </div> 
+          </div> 
+          </div>  
 
-buttton.addEventListener('click', getResults);
+          <div class="col-sm-6"> 
+          <div class="card"> 
+          <div class="card-body"> 
+          <h5 class="card-title">Today's Deaths</h5> 
+          <p class="card-text">${res.todayDeaths}</p>  
+          </div> 
+          </div> 
+          </div>  
+
+
+          <div class="col-sm-6"> 
+          <div class="card"> 
+          <div class="card-body"> 
+          <h5 class="card-title">Total deaths</h5> 
+          <p class="card-text">${res.deaths}</p>  
+          </div> 
+          </div> 
+          </div>  
+
+
+          <div class="col-sm-6"> 
+          <div class="card"> 
+          <div class="card-body"> 
+          <h5 class="card-title">recovered</h5> 
+          <p class="card-text">${res.recovered}</p>  
+          </div> 
+          </div> 
+          </div>  
+
+          <div class="col-sm-6"> 
+          <div class="card"> 
+          <div class="card-body"> 
+          <h5 class="card-title">Active cases</h5> 
+          <p class="card-text">${res.active}</p>  
+          </div> 
+          </div> 
+          </div>  
+
+
+          <div class="col-sm-6"> 
+          <div class="card"> 
+          <div class="card-body"> 
+          <h5 class="card-title">Today's cases</h5> 
+          <p class="card-text">${res.todayCases}</p>  
+          </div> 
+          </div> 
+          </div>  
+
+
+          <div class="col-sm-6"> 
+          <div class="card"> 
+          <div class="card-body"> 
+          <h5 class="card-title">Tests</h5> 
+          <p class="card-text">${res.test}</p>  
+          </div> 
+          </div> 
+          </div>  
+        `; 
+        let end = new Date().getTime(); 
+        const time = end - start ;  
+        console.log(`API RESPONSE TIME: ${time} Milliseonds`)
+
+        results.innerHTML = output;
+      })
+      .catch((error) => {
+        error.json().then((body) => {
+          console.log(body); 
+          console.log('error with API occured...😨')
+        });
+      });
+  }
+}
+
+button.addEventListener('click', getResults);
+
+
 
 // API RESPONSE
 // {
