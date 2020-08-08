@@ -34,8 +34,8 @@ async function getResults() {
           <div class="col-sm-6"> 
           <div class="card"> 
           <div class="card-body"> 
-          <h5 class="card-title">Today's cases</h5> 
-          <p class="card-text">${res.todayCases}</p>  
+          <h5 class="card-title">Updated at</h5> 
+          <p class="card-text">${res.updated}</p>  
           </div> 
           </div> 
           </div>  
@@ -93,7 +93,7 @@ async function getResults() {
           <div class="card"> 
           <div class="card-body"> 
           <h5 class="card-title">Tests</h5> 
-          <p class="card-text">${res.test}</p>  
+          <p class="card-text">${res.tests}</p>  
           </div> 
           </div> 
           </div>  
