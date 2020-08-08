@@ -1,14 +1,29 @@
+/* eslint-disable class-methods-use-this */
 /* eslint-disable no-console */
 /* eslint-disable-no-console */
-
 const button = document.getElementById('button-addon1');
 const input = document.querySelector('.form-control').value;
 const API_URL = `https://corona.lmao.ninja/v2/all?${input}`;
 const results = document.querySelector('.results');
+const removeQuery = document.querySelector('.form-control');
+
+function showAlert() {
+  const alert = ` 
+    <div class="alert alert-danger" role="alert">
+    Please enter a valid value! 
+    </div>
+  `;
+  const jumbo = document.getElementById('i');
+  const conatiner = document.querySelector('.container');
+  conatiner.insertBefore(jumbo);
+  window.setTimeout(() => {
+    document.querySelector('.alert alert-danger').remove();
+  }, 3000);
+}
 
 async function getResults() {
   if (input === null) {
-    console.log('enter a value'); // change to dynamic div 
+    alert('error')
   } else {
     const start = new Date().getTime();
     await fetch(API_URL)
@@ -82,25 +97,22 @@ async function getResults() {
           </div> 
           </div> 
           </div>  
-        `; 
-        let end = new Date().getTime(); 
-        const time = end - start ;  
-        console.log(`API RESPONSE TIME: ${time} Milliseonds`)
-
+        `;
+        const end = new Date().getTime();
+        const time = end - start;
+        console.log(`API RESPONSE TIME: ${time} Milliseonds`);
         results.innerHTML = output;
       })
       .catch((error) => {
         error.json().then((body) => {
-          console.log(body); 
-          console.log('error with API occured...😨')
+          console.log(body);
+          console.log('error with API occured...😨');
         });
       });
   }
 }
 
 button.addEventListener('click', getResults);
-
-
 
 // API RESPONSE
 // {
@@ -126,3 +138,5 @@ button.addEventListener('click', getResults);
 //   "criticalPerOneMillion": 8.41,
 //   "affectedCountries": 215
 // }
+
+// validation
