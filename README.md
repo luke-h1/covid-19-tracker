@@ -6,7 +6,3 @@
   * fix styles + button to be more user friendly ✅
   * deploy ✅
   * refactor & cleanup console errors  ✅
-
-# documentation 
-  * https://documenter.getpostman.com/view/11144369/Szf6Z9B3?version=latest 
-  * postman collections 
