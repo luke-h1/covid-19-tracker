@@ -1,25 +1,26 @@
-const input = document.getElementById('text-input');
-const API_URL = `https://covid19-stats-api.herokuapp.com/api/v1/cases?country=${input}`;
+const myForm = document.getElementById('myForm');
+myForm.addEventListener('submit', (e) => {
+  e.preventDefault(); // prevent form being submitted
 
-async function getResults(e) {
-  e.preventDefault();
-  const start = new Date().getTime();
-  await fetch(API_URL)
+  const country = document.getElementById('country').value;
+  // fetch get request for data
+  const url = `https://api.covid19api.com/total/dayone/country/${country}`;
+
+  fetch(url)
     .then((res) => res.json())
     .then((res) => {
       console.log(res);
-      document.querySelector('.results').innerHTML = ` 
-        <ul> 
-          <li>Cases: ${res.cases}</li>
-          <li>Today's cases: ${res.todayCases}</li>
-          <li>Recovered: ${res.recovered}</li>
-          <li>Cases per 1 million: ${res.casesPerOneMillion}</li>
-        </ul> 
-          `;
+      const { length } = res;
+      const index = length - 1;
+      const confirmed = document.getElementById('confirmed');
+      const recovered = document.getElementById('recovered');
+      const deaths = document.getElementById('deaths');
+      confirmed.append(`Confirmed Cases:${res[index].Confirmed}`);
+      recovered.append(`Confirmed Recovered:${res[index].Recovered}`);
+      deaths.append(`Confirmed Deaths:${res[index].Deaths}`);
     });
-  const end = new Date().getTime();
-  const time = end - start;
-  console.log(`API RES TIME: ${time} Milliseconds`);
-}
-
-document.querySelector('.btn').addEventListener('click', getResults);
+  // fix concatenation issue
+  confirmed.innerHTML = '';
+  recovered.innerHTML = '';
+  deaths.innerHTML = '';
+});

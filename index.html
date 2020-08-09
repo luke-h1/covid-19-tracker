@@ -1,31 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="styles.css" /> 
-        <meta http-equiv="X-UA-Compatible" content="ie-edge" />
-        <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
-        integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ=="
-        crossorigin="anonymous"
-    /> 
-        <title>Covid 19 tracker</title>
-    </head> 
-    <h2 class="heading">Covid 19 tracker</h2>
-    <div class="container">
-    <body>
-        <div class="search">
-                    <input type="text" id="text-input">
-                    <button class="btn">GO</button>
-                </div>
-        </div>
-        <div class="results">
-        </div>
-   
-
-        <script src="app.js"></script>
-
-    </body> 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width= , initial-scale=1.0" />
+    <title>covid tracker</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+    />
+  </head>
+  <body>
+    <h1>Covid 19 Tracker</h1>
+    <form id="myForm">
+      <input type="text" name="" id="country" placeholder="Country name..." />
+      <input type="submit" value="Get Data" class="btn" />
+    </form>
+    <h1 id="confirmed"></h1>
+    <h1 id="recovered"></h1>
+    <h1 id="deaths"></h1>
+    <script src="app.js"></script>
+  </body>
 </html>
