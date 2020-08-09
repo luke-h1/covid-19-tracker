@@ -4,9 +4,9 @@ myForm.addEventListener('submit', (e) => {
 
   const country = document.getElementById('country').value;
   // fetch get request for data
-  const url = `https://api.covid19api.com/total/dayone/country/${country}`;
+  const API_URL = `https://api.covid19api.com/total/dayone/country/${country}`;
 
-  fetch(url)
+  fetch(API_URL)
     .then((res) => res.json())
     .then((res) => {
       console.log(res);
