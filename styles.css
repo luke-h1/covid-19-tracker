@@ -12,6 +12,8 @@
     text-align: center;
     margin-top: 100px;
     color: #000;
+    font-family: 'Montserrat', sans-serif;
+
   }
   
   body {
@@ -25,4 +27,8 @@
   
   .btn {
     margin-left: 100px;
+  }
+
+  h2 { 
+    text-align: center;
   }
