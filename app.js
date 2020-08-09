@@ -1,11 +1,6 @@
-/* eslint-disable class-methods-use-this */
-/* eslint-disable no-console */
-/* eslint-disable-no-console */
-const button = document.getElementById('button-addon1');
-const input = document.querySelector('.form-control').value;
+
 const API_URL = `https://corona.lmao.ninja/v2/all?${input}`;
-const results = document.querySelector('.results');
-const removeQuery = document.querySelector('.form-control');
+
 
 function showAlert() {
   const alert = ` 
@@ -30,78 +25,11 @@ async function getResults() {
       .then((res) => res.json())
       .then((res) => {
         console.log(res);
-        const output = `
-          <div class="col-sm-6"> 
-          <div class="card"> 
-          <div class="card-body"> 
-          <h5 class="card-title">Updated at</h5> 
-          <p class="card-text">${res.updated}</p>  
-          </div> 
-          </div> 
-          </div>  
-
-          <div class="col-sm-6"> 
-          <div class="card"> 
-          <div class="card-body"> 
-          <h5 class="card-title">Today's Deaths</h5> 
-          <p class="card-text">${res.todayDeaths}</p>  
-          </div> 
-          </div> 
-          </div>  
-
-
-          <div class="col-sm-6"> 
-          <div class="card"> 
-          <div class="card-body"> 
-          <h5 class="card-title">Total deaths</h5> 
-          <p class="card-text">${res.deaths}</p>  
-          </div> 
-          </div> 
-          </div>  
-
-
-          <div class="col-sm-6"> 
-          <div class="card"> 
-          <div class="card-body"> 
-          <h5 class="card-title">recovered</h5> 
-          <p class="card-text">${res.recovered}</p>  
-          </div> 
-          </div> 
-          </div>  
-
-          <div class="col-sm-6"> 
-          <div class="card"> 
-          <div class="card-body"> 
-          <h5 class="card-title">Active cases</h5> 
-          <p class="card-text">${res.active}</p>  
-          </div> 
-          </div> 
-          </div>  
-
-
-          <div class="col-sm-6"> 
-          <div class="card"> 
-          <div class="card-body"> 
-          <h5 class="card-title">Today's cases</h5> 
-          <p class="card-text">${res.todayCases}</p>  
-          </div> 
-          </div> 
-          </div>  
-
-
-          <div class="col-sm-6"> 
-          <div class="card"> 
-          <div class="card-body"> 
-          <h5 class="card-title">Tests</h5> 
-          <p class="card-text">${res.tests}</p>  
-          </div> 
-          </div> 
-          </div>  
-        `;
+       
+        
         const end = new Date().getTime();
         const time = end - start;
         console.log(`API RESPONSE TIME: ${time} Milliseonds`);
-        results.innerHTML = output;
       })
       .catch((error) => {
         error.json().then((body) => {
