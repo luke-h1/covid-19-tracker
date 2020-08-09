@@ -18,7 +18,7 @@ myForm.addEventListener('submit', (e) => {
             const recovered = document.getElementById('recovered');
             const deaths = document.getElementById('deaths');
             location.append(`Country: ${res[index].Country}`);
-            date.append(`Date: ${res[index].Date}`);
+            date.append(`Updated At: ${res[index].Date}`);
             confirmed.append(`Confirmed Cases:${res[index].Confirmed}`);
             recovered.append(`Confirmed Recovered:${res[index].Recovered}`);
             deaths.append(`Confirmed Deaths:${res[index].Deaths}`);
