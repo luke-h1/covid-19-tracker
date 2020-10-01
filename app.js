@@ -19,10 +19,10 @@ async function getWorldwideData() {
     const WORLD_URL = `https://covid2019-api.herokuapp.com/v2/total`;
     const res = await fetch(`${WORLD_URL}`);
     const data = await res.json();
-    console.log(data);
     showWorldWideData(data);
   } catch (err) {
     showError("error occured with API");
+    console.error(err);
   }
 }
 
@@ -31,21 +31,38 @@ function showWorldWideData(data) {
   output += `
     <div class="card card-primary">
     <h2 class="card-title">Active</h2>
-    <span class="number">${data.data.active.toLocaleString(2)}</span>
+    <span class="number">${
+      data.data.active
+        ? data.data.active.toLocaleString(2)
+        : "Country Not Found"
+    }
+    </span>
   </div>
   <div class="card card-primary">
   <h2 class="card-title">Confirmed</h2>
-  <span class="number">${data.data.confirmed.toLocaleString(2)}</span>
+  <span class="number">
+  ${
+    data.data.active
+      ? data.data.confirmed.toLocaleString(2)
+      : "Country Not Found"
+  }
+  </span>
 </div>
 
 <div class="card card-primary">
 <h2 class="card-title">Deaths</h2>
-<span class="number">${data.data.deaths.toLocaleString(2)}</span>
+<span class="number">
+${data.data.active ? data.data.deaths.toLocaleString(2) : "Country Not Found"}
+</span>
 </div>
 
 <div class="card card-primary">
 <h2 class="card-title">Recovered</h2>
-<span class="number">${data.data.recovered.toLocaleString(2)}</span>
+<span class="number">
+${
+  data.data.active ? data.data.recovered.toLocaleString(2) : "Country Not Found"
+}
+</span>
 </div>
     `;
   outputEl.innerHTML = output;
