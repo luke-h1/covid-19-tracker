@@ -84,10 +84,31 @@ body {
   transform: scale(0.93);
 }
 
-
-.error { 
+.error {
   text-align: center;
   justify-content: center;
   align-items: center;
-  color: red
+  color: red;
+}
+
+.grid-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2em;
+}
+
+@media (max-width: 1024px) {
+  .grid-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .grid-wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .grid-wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

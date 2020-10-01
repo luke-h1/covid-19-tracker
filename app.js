@@ -82,7 +82,6 @@ async function fetchCountryData(e) {
     showError("Problem with API");
   }
 }
-
 // event listeners
 document.addEventListener("DOMContentLoaded", getWorldwideData);
 form.addEventListener("submit", fetchCountryData);
