@@ -83,3 +83,11 @@ body {
 .submit-btn:active {
   transform: scale(0.93);
 }
+
+
+.error { 
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: red
+}
