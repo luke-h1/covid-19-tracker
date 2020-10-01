@@ -3,15 +3,6 @@ const outputEl = document.getElementById("output");
 const form = document.getElementById("form");
 const query = document.getElementById("query");
 
-function showSpinner(action) {
-  const spinner = document.querySelector(".loader");
-  if (action === "show") {
-    spinner.style.display = "block";
-  } else {
-    spinner.style.display = "none";
-  }
-}
-
 function showError(message) {
   const h1 = document.createElement("h1");
   h1.className = "error";
@@ -25,7 +16,6 @@ function showError(message) {
 
 async function getWorldwideData() {
   try {
-    showSpinner("show");
     const WORLD_URL = `https://covid2019-api.herokuapp.com/v2/total`;
     const res = await fetch(`${WORLD_URL}`);
     const data = await res.json();
@@ -37,7 +27,6 @@ async function getWorldwideData() {
 }
 
 function showWorldWideData(data) {
-  showSpinner("none");
   let output = "";
   output += `
     <div class="card card-primary">
@@ -81,7 +70,6 @@ ${
 
 async function fetchCountryData(e) {
   e.preventDefault();
-  showSpinner("show");
   const queryValue = query.value;
   const COUNTRY_URL = `https://covid2019-api.herokuapp.com/v2/country/${queryValue}`;
   if (queryValue === "") {
@@ -89,7 +77,6 @@ async function fetchCountryData(e) {
   } else if (queryValue !== "") {
     const response = await fetch(`${COUNTRY_URL}`);
     const json = await response.json();
-    showSpinner("none");
     showWorldWideData(json);
   } else {
     showError("Problem with API");

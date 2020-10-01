@@ -91,9 +91,7 @@ body {
   color: red;
 }
 
-.loader {
-  width: 200px;
-}
+
 
 @media (max-width: 1024px) {
   .grid-wrapper {
