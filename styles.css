@@ -91,10 +91,8 @@ body {
   color: red;
 }
 
-.grid-wrapper {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 2em;
+.loader {
+  width: 200px;
 }
 
 @media (max-width: 1024px) {
