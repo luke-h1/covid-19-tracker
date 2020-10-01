@@ -11,29 +11,12 @@
     </header>
     <div class="wrapper">
       <h1 class="region">worldwide</h1>
-
-      <div class="grid-wrapper">
-        <div class="card card-primary">
-          <h2 class="card-title">WorldWide</h2>
-          <span class="number">300,00000</span>
-        </div>
-        <div class="card card-danger">
-          <h2 class="card-title">Total active</h2>
-          <span class="number">300,00000</span>
-        </div>
-
-        <div class="card card-secondary">
-          <h2 class="card-title">Total recovered</h2>
-          <span class="number">300,00000</span>
-        </div>
-
-        <div class="card">
-          <h2 class="card-title">Total Deaths</h2>
-          <span class="number">300,00000</span>
-        </div>
-      </div>
+      <form class="form">
+        <input type="text" placeholder="Specific country" class="form-input" />
+        <input type="submit" placeholder="submit" class="submit-btn" />
+      </form>
+      <div class="grid-wrapper" id="output"></div>
     </div>
-
     <script src="app.js"></script>
   </body>
 </html>
